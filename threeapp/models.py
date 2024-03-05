@@ -1,10 +1,14 @@
+# threeapp/models.py
+
 from django.db import models
-import os
-# Create your models here.
-class register(models.Model):
-    name = models.CharField(max_length=30)
-    Email= models.EmailField(max_length=254)
-    phone= models.IntegerField(max_length=13)
-    account = models.CharField(max_length=10)
-    message = models.CharField(max_length=300)
+
+class Registration(models.Model):
+    name = models.CharField(max_length=255,null=True)
+    email = models.EmailField(null=True)
+    phone_number = models.CharField(max_length=15,null=True)
+    account = models.CharField(max_length=255,null=True)
+    message = models.TextField(null=True)
+
+    def __str__(self):
+        return self.name
    

@@ -90,30 +90,34 @@
                       <p class="slider--item-description">Action & Adventure,Anime ,Children.</p>
                       <button class="cta" 
                       onclick="window.location.href = 'contact';">
-                          ok
-                      </button>
-                      <button class="cta" 
-                      onclick="window.location.href = 'contact';">
-                          not
+                      <p  style="background-color:rgb(229, 12, 12);">buy now</p>
                       </button>
                     </a>
                   </li>
                   <li class="slider--item slider--item-center">
                     <a href="#0">
                       <div class="slider--item-image">
-                        <img src={% static 'assets/img/work-metiew-smith.jpg' %} alt="Metiew and Smith"  onclick="window.location.href = 'templet/contact.html';">
+                        <img src={% static 'assets/img/work-metiew-smith.jpg' %} alt="Metiew and Smith"  onclick="window.location.href = 'contact';">
                       </div>
                       <p class="slider--item-title">disney+ hotstar</p>
                       <p class="slider--item-description">Drama,Serials,Come<br>,Animation,Unscripted,Continuations<br>,Drama,Comedy.</p>
+                      <button class="cta" 
+                      onclick="window.location.href = 'contact';">
+                         <p  style="background-color:rgb(110, 19, 247);">buy now</p>
+                      </button>
                     </a>
                   </li>
                   <li class="slider--item slider--item-right">
                     <a href="#0">
                       <div class="slider--item-image">
-                        <img src={% static 'assets/img/work-alex-nowak.jpg' %} alt="Alex Nowak"  onclick="window.location.href = 'contact.html';">
+                        <img src={% static 'assets/img/work-alex-nowak.jpg' %} alt="Alex Nowak"  onclick="window.location.href = 'contact';">
                       </div>
                       <p class="slider--item-title">amazon prime</p>
                       <p class="slider--item-description">Action & Adventure,Anime <br>,Children & Family ,Classic ,Comedies ,Documentaries<br> ,Dramas,Unscripted,Continuations</p>
+                      <button class="cta" 
+                      onclick="window.location.href = 'contact';">
+                       <p  style="background-color:rgb(8, 8, 8);">buy now</p>
+                      </button>
                     </a>
                   </li>
                 </ul>
@@ -200,7 +204,7 @@
             <div class="share">
             <center> <h2>FILL THE DEATIAL HERE</h2></center>
              <center>
-              <form action='register' method="get">
+              <form  action="register/" method="POST" onsubmit=register()>
                 {% csrf_token %}
                 <h3>my information</h3>
                 <h4>Contact us today, and get reply with in 24 hours!</h4>
@@ -210,47 +214,45 @@
                     text-emphasis-color:black;
                     margin: 0 0 10px;
                     min-width: 100%;
-                    padding: 0;
+                    padding: white;
                     width: 100%;
                     }
                 </style>
                 <fieldset>
-                  <input placeholder="Your name" type="text" tabindex="1" style="background-color:black;"  required autofocus>
+                  <input name="name" placeholder="Your name" type="text" tabindex="1" style="background-color:black;"  required autofocus>
                 </fieldset><br>
                 <fieldset>
-                  <input placeholder="Your Email Address" type="email" tabindex="2" style="background-color:black;" required>
+                  <input  name="email" placeholder="Your Email Address" type="email" tabindex="2" style="background-color:black;" required>
                 </fieldset><br>
                 <fieldset>
-                  <input placeholder="Your Phone Number" type="tel" tabindex="3" style="background-color:black;" required>
+                  <input name="phone_number" placeholder="Your Phone Number" type="tel" tabindex="3" style="background-color:black;" required>
                 </fieldset><br>
                 <fieldset>
-                  <label for="cars">Choose a account:</label>
+                  <label for="account">Choose a account:</label>
                     <select name="account" id="name">
                     <option value="netflix">netflix</option>
                     <option value="amazone prime">amazone</option>
                     <option value="disney plus hotstar">hotstar</option>
                     </select>
                     <style>
-                    #nname {
+                    #name {
                       padding: 5px;
-                      color: #f7f7f8;
+                      color: #ece3edfe;
                       font-size: 12px;
-                      background: black;
+                      background: rgb(16, 16, 16);
                       appearance: none;
                   
                   }
                 </style>
                 </fieldset><br>
                 <fieldset>
-                  <textarea placeholder="Type your Message Here...." tabindex="5" style="background-color:black;" required></textarea>
+                  <textarea name="message" placeholder="Type your Message Here...." tabindex="5" style="background-color:black;" required></textarea>
                 </fieldset><br>
                 <fieldset>
                   <button name="submit" type="submit" id="contact-submit" style="background-color:rgb(23, 12, 12);" data-submit="...Sending" value="submit">Submit</button>
                 </fieldset><br>
               </form>  
-            </center> 
-            
-              
+            </center>   
             </div>
           </li>
         </ul>

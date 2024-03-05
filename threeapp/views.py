@@ -1,5 +1,13 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
+
+from django.db import models
+# threeapp/views.py
+
+from .models import Registration
+
+
+
 # Create your views here.
 def index(request):
     return render(request,"index.html")
@@ -19,16 +27,40 @@ def aboutpage(request):
     return render(request,"aboutpage.html")
 
 def register(request):
-        name=request.POST['name']
-        email=request.POST['email']
-        phone_number=request.POST['phone_number']
-        account=request.POST['account']
-        message=request.POST['message']
-         
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        account = request.POST.get('account')
+        message = request.POST.get('message')
 
-        user=user.objects.create_user(name=name)
-        print("we wil call back you")
-        return redirect('/')
- 
+        # Create a new Registration instance and save it to the database
+        registration_instance = Registration(
+            name=name,
+            email=email,
+            phone_number=phone_number,
+            account=account,
+            message=message
+        )
+        registration_instance.save()
+
+        print("We will call you back.")
+
+        # Redirect to a success page or any other appropriate action
+        #return redirect('index.html')  # Replace 'success_page' with your actual success page URL
+
+    return render(request, 'index.html')  # Replace 'registration_form.html' with your actual registration form template
 
 
+#def register(request):
+    return render(request,"/register.py")
+
+#def register(request):
+    name=request.POST.get('name')
+    email=request.POST.get('email')
+    phone_number=request.POST.get('phone_number')
+    account=request.POST.get('account')
+    message=request.POST.get('message')
+    print(name)
+    
+    return render(request,"index.html")

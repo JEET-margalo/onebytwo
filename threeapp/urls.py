@@ -11,6 +11,7 @@ urlpatterns = [
         path('idea/',views.idea,name='idea'),
         path('ouridea/',views.ouridea,name='ouridea'),
         path('aboutpage/',views.aboutpage,name='aboutpage'),
-        path('register/',views.register,name='register')
+        path('register/',views.register,name='register'),
+        path('index/',views.index,name='index'),        
 ]
 
