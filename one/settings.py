@@ -26,12 +26,12 @@ SECRET_KEY = 'django-insecure-@5jng)a#7^9ud*b$1!vmmyjbei2-h758^w7vj72oli+eo+th@t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jeeva_email'
-EMAIL_HOST_PASSWORD = 'E2F810258B3053B5FE5590BE185418DD4A81D75E5193A83410DA7F29678008691AC49D36DE57B02DEA523BB1822449F2'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'jeeva_email'
+# EMAIL_HOST_PASSWORD = 'E2F810258B3053B5FE5590BE185418DD4A81D75E5193A83410DA7F29678008691AC49D36DE57B02DEA523BB1822449F2'
 
 
 ALLOWED_HOSTS = []
@@ -87,18 +87,25 @@ WSGI_APPLICATION = 'one.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER':'postgres',
-        'PASSWORD':'9487',
-        'HOST':'localhost',
-        'PORT': "5432",
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER':'postgres',
+#         'PASSWORD':'9487',
+#         'HOST':'localhost',
+#         'PORT': "5432",
 
         
+#     }
+# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # This creates a SQLite database file in your project directory
     }
 }
+
 
 
 # Password validation
